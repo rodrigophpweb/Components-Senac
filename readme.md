@@ -29,7 +29,6 @@ git clone https://github.com/your-username/countdown-component.git
 
 Then, open the index.html file in your browser to see the countdown in action.
 
-# Countdown Component
 
 ## Usage
 
