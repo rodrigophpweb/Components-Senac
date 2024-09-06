@@ -25,7 +25,7 @@ No installation is required for this component. Simply copy the HTML, CSS, and J
 Alternatively, you can clone this repository to get the files locally:
 
 ```bash
-git clone https://github.com/your-username/countdown-component.git
+git clone https://github.com/rodrigophpweb/Components-Senac.git
 ```
 
 Then, open the index.html file in your browser to see the countdown in action.
