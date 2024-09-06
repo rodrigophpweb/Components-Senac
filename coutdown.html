@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contagem Regressiva - Gerações</title>
+  
+</head>
+<body>
+
+  <!-- Container principal -->
+  <div class="container">
+    
+    <!-- Logotipo da Geração Senac -->
+    <img src="https://www.intranet.sp.senac.br/intranet-frontend/uploads/imagem/99682883" alt="Logotipo Geração Senac">
+
+    <!-- Separador entre o logotipo e a contagem regressiva -->
+    <div class="separator"></div>
+
+    <!-- Seção da contagem regressiva -->
+    <div class="countdown">
+      
+      <!-- Bloco de contagem de dias -->
+      <div>
+        <span id="days"></span>
+        <div class="time-label">Dias</div>
+      </div>
+
+      <!-- Bloco de contagem de horas -->
+      <div>
+        <span id="hours"></span>
+        <div class="time-label">Horas</div>
+      </div>
+
+      <!-- Bloco de contagem de minutos -->
+      <div>
+        <span id="minutes"></span>
+        <div class="time-label">Minutos</div>
+      </div>
+
+      <!-- Bloco de contagem de segundos -->
+      <div>
+        <span id="seconds"></span>
+        <div class="time-label">Segundos</div>
+      </div>
+    </div>
+
+    <!-- Data do evento -->
+    <mark class="date-text">24 e 25 de maio de 2025</mark>
+  </div>
+
+  <!-- Estilos CSS -->
+  <style>
+    /* Estilo do container principal */
+    .container {
+      background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente */
+      padding: 30px;
+      border-radius: 20px; /* Cantos arredondados */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+      width: 700px;
+      margin: 0 auto; /* Centraliza o container */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px; /* Margem superior */
+    }
+
+    /* Estilo da imagem */
+    .container img {
+        width: 50%; /* Ajusta o tamanho da imagem */
+    }
+
+    /* Estilo do separador */
+    .separator {
+        background: linear-gradient(to right, #8772b2, #f8b600, #d7007e, #0baa97, #e75d0d, #00aed5, #325ea9); /* Degrade multicolorido */
+        background-size: 200% 200%; /* Define a animação de gradiente */
+        height: 2px; /* Altura da linha */
+        margin: 10px 0 20px; /* Margens acima e abaixo */
+        animation: gradientAnimation 20s ease infinite, fillAnimation 2s ease-in-out infinite; /* Animação contínua */
+    }
+
+    /* Estilo do título (não utilizado diretamente no HTML, mas pode ser usado) */
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #004A8C;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    /* Layout da contagem regressiva */
+    .countdown {
+      display: flex;
+      justify-content: space-between; /* Distribui os elementos igualmente */
+      width: 100%;
+      max-width: 600px;
+    }
+
+    /* Estilo dos blocos individuais de tempo (dias, horas, minutos, segundos) */
+    .countdown div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Efeito de aumento ao passar o mouse sobre os blocos de tempo */
+    .countdown div:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Estilo dos números da contagem regressiva */
+    .countdown span {
+        font-size: 2.5em;
+        font-weight: bold;
+        font-family: 'Montserrat-SemiBold'; /* Fonte customizada */
+        color: #f7941f; /* Cor laranja */
+        animation: pulse 3s ease-in-out infinite, flip 0.8s ease-in-out; /* Animação de pulsação e rotação */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra de texto suave */
+        display: inline-block;
+        perspective: 1000px; /* Perspectiva 3D */
+    }
+
+    /* Label dos blocos de tempo */
+    .time-label {
+      font-size: 1.2em;
+      color: #004A8C;
+    }
+
+    /* Estilo do texto da data */
+    .date-text {
+        font-size: 1.5em;
+        background: linear-gradient(90deg, #004A8C 0%, #004A8C 50%, #003366 100%); /* Gradiente de azul */
+        color: white;
+        margin-top: 25px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        opacity: 0; /* Inicialmente invisível */
+        animation: fadeIn 2s forwards; /* Animação para aparecer */
+    }
+
+    /* Brilho no texto da data */
+    .date-text::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -150%;
+        width: 250%;
+        height: 200%;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); /* Gradiente de brilho */
+        transform: rotate(25deg);
+        animation: shine 3s ease-in-out infinite; /* Animação de brilho */
+    }
+
+    /* Animações */
+    @keyframes shine {
+        0% { left: -150%; }
+        50% { left: 50%; }
+        100% { left: 150%; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes flip {
+        0% { transform: rotateX(0deg); opacity: 1; }
+        50% { transform: rotateX(90deg); opacity: 0; }
+        100% { transform: rotateX(0deg); opacity: 1; }
+    }
+
+    @keyframes fillAnimation {
+        0% { width: 0%; }
+        100% { width: 100%; }
+    }
+  </style>
+
+  <!-- Script de contagem regressiva -->
+  <script>
+    // Função para atualizar a contagem regressiva
+    function updateCountdown() {
+      const targetDate = new Date('May 24, 2025 09:00:00').getTime(); // Data e hora alvo
+      const now = new Date().getTime(); // Data e hora atuais
+      const timeLeft = targetDate - now; // Calcula o tempo restante
+
+      // Calcula dias, horas, minutos e segundos restantes
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      // Atualiza os elementos no HTML
+      document.getElementById('days').innerHTML = days;
+      document.getElementById('hours').innerHTML = hours;
+      document.getElementById('minutes').innerHTML = minutes;
+      document.getElementById('seconds').innerHTML = seconds;
+
+      // Se a data alvo passou, zera a contagem
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('days').innerHTML = "0";
+        document.getElementById('hours').innerHTML = "0";
+        document.getElementById('minutes').innerHTML = "0";
+        document.getElementById('seconds').innerHTML = "0";
+      }
+    }
+
+    // Atualiza a contagem a cada segundo
+    const countdownInterval = setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
