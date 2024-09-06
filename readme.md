@@ -26,9 +26,9 @@ Alternatively, you can clone this repository to get the files locally:
 
 ```bash
 git clone https://github.com/your-username/countdown-component.git
+```
 
 Then, open the index.html file in your browser to see the countdown in action.
-
 
 ## Usage
 
@@ -52,7 +52,7 @@ To use this countdown component in your project:
   </div>
   <mark class="date-text">24 and 25 of May, 2025</mark>
 </div>
-
+```
 ## Example JavaScript for Countdown
 
 ```javascript
@@ -73,7 +73,7 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
-
+```
 ## Customization
 
 You can easily customize the countdown by:
