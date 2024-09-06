@@ -95,5 +95,8 @@ const targetDate = new Date('Your Event Date Here').getTime();
 - **CSS**: Provides styling and animations, including the custom separator gradient and pulse effects.
 - **JavaScript**: Handles the countdown logic and dynamic updates to the display.
 
-#License
+## Author
+Software Engineer Rodrigo Vieira Eufrasio da Silva.
+
+## License
 This project is open-source and available under the MIT License. Feel free to modify and use it in your projects.
