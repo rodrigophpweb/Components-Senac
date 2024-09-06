@@ -88,7 +88,7 @@ To adjust the countdown for your event, change the date in this section of the J
 
 ```javascript
 const targetDate = new Date('Your Event Date Here').getTime();
-
+```
 ## Technologies
 
 - **HTML**: Structure of the countdown component.
